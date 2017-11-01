@@ -1,0 +1,14 @@
+.CurrentUser {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin: 1% 1% 0 0;
+}
+.CurrentUserIdentification {
+	padding: 1em;
+}
+
+.CurrentUserPhoto {
+	max-height: 100px;
+	border-radius:50%;
+}
