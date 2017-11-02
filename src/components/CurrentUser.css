@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
-	margin: 1% 1% 0 0;
+	margin: 4% 4% 0 0;
 }
 .CurrentUserIdentification {
 	padding: 1em;

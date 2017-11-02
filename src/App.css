@@ -1,3 +1,19 @@
 .Application {
   margin: auto;
 }
+.Application-SignedOn{
+  display:flex;
+  flex-direction: column;
+}
+.Application-SignedOn h1{
+  display:flex;
+  justify-content: center;
+}
+.Application--SearchBar{
+  display:flex;
+  flex-direction: row;
+}
+.Application--Body{
+  display: flex;
+  flex-direction: row;
+}

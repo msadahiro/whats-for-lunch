@@ -4,7 +4,7 @@ import './CurrentUser.css';
 
 const CurrentUser = ({ user }) => {
 	return (
-		<div class="CurrentUser">
+		<div className="CurrentUser">
 			<img
 				className="CurrentUserPhoto"
 				src={user.photoURL}

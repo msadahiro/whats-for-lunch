@@ -4,29 +4,43 @@ import { auth, database } from './firebase';
 // components
 import SignIn from './components/SignIn';
 import CurrentUser from './components/CurrentUser';
+import NewRestaurant from './components/NewRestaurant';
+import Restaurants from './components/Restaurants';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: null
+      currentUser: null,
+      restaurants: null
     }
+    this.restaurantRef = database.ref('/restaurants');
   }
   componentDidMount() {
     auth.onAuthStateChanged((currentUser) => {
       this.setState({
         currentUser
       })
+      this.restaurantRef.on('value', (snapshot) => {
+        this.setState({ restaurants: snapshot.val() });
+      })
     })
   }
   render() {
-    const { currentUser } = this.state;
+    const { currentUser, restaurants } = this.state;
     return (
       <div className="Application">
         {!currentUser && <SignIn />}
         {currentUser &&
-          <div>
-            <CurrentUser user={currentUser} />
+          <div className="Application-SignedOn">
+            <h1>What's For Lunch?</h1>
+            <div className="Application--SearchBar">
+              <NewRestaurant />
+              <CurrentUser user={currentUser} />
+            </div>
+            <div className="Application--Body">
+              <Restaurants restaurants={restaurants} user={currentUser} />
+            </div>
           </div>
         }
       </div>

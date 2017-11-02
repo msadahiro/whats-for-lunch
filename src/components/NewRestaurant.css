@@ -1,0 +1,17 @@
+.NewRestaurant{
+	flex:1;
+	width:100%;
+	margin:4%;
+}
+.NewRestaurant input{
+	width:80%;
+	padding:3%;
+	font-size:24px;
+}
+.NewRestaurant button{
+	width:20%;
+	padding:3%;
+	font-size: 24px;
+	background-color:lightblue;
+	overflow: hidden;
+}
