@@ -11,13 +11,13 @@ class Restaurant extends Component {
 				<h3>{restaurantName}</h3>
 				<ul>
 					{
-						votes && map(votes, (vote, key) => <li key={key}>{vote}</li>)
+						votes && map(votes, (vote, key) => <li className="listItem" key={key}>{vote}</li>)
 					}
 				</ul>
 				{
 					userHasSelected
-						? <button className="destructive" onClick={handleDeselect}>Nah, Nevermind</button>
-						: <button onClick={handleSelect}>Yeah, I'd go there</button>
+						? <button className="remove" onClick={handleDeselect}>Nah, Nevermind</button>
+						: <button className="select" onClick={handleSelect}>Yeah, I'd go there</button>
 				}
 			</article>
 		)

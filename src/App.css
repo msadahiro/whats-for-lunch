@@ -1,14 +1,15 @@
 .Application {
   margin: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .Application-SignedOn{
   display:flex;
   flex-direction: column;
 }
-.Application-SignedOn h1{
-  display:flex;
-  justify-content: center;
-}
+
 .Application--SearchBar{
   display:flex;
   flex-direction: row;
