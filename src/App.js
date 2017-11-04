@@ -6,7 +6,8 @@ import SignIn from './components/SignIn';
 import CurrentUser from './components/CurrentUser';
 import NewRestaurant from './components/NewRestaurant';
 import Restaurants from './components/Restaurants';
-// import Leaderboard from './components/Leaderboard';
+import Leaderboard from './components/Leaderboard';
+import HowItWorks from './components/HowItWorks';
 
 class App extends Component {
   constructor(props) {
@@ -31,8 +32,13 @@ class App extends Component {
     const { currentUser, restaurants } = this.state;
     return (
       <div className="Application">
-        <h1>What's For Lunch?</h1>
-        {!currentUser && <SignIn />}
+        <h1 className="Application--title">What's For Lunch?</h1>
+        {!currentUser &&
+          <div>
+            <HowItWorks />
+            <SignIn />
+          </div>
+        }
         {currentUser &&
           <div className="Application-SignedOn">
             <div className="Application--SearchBar">
@@ -40,7 +46,7 @@ class App extends Component {
               <CurrentUser user={currentUser} />
             </div>
             <div className="Application--Body">
-              {/* <Leaderboard restaurants={restaurants} /> */}
+              <Leaderboard restaurants={restaurants} />
               <Restaurants restaurants={restaurants} user={currentUser} />
             </div>
           </div>

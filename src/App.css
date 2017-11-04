@@ -2,8 +2,10 @@
   margin: auto;
   display:flex;
   flex-direction: column;
+}
+.Application--title{
+  display:flex;
   justify-content: center;
-  align-items: center;
 }
 .Application-SignedOn{
   display:flex;
@@ -13,6 +15,7 @@
 .Application--SearchBar{
   display:flex;
   flex-direction: row;
+  align-self: stretch;
 }
 .Application--Body{
   display: flex;
