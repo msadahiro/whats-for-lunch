@@ -8,8 +8,12 @@ class NewRestaurant extends Component {
 		this.state = {
 			restaurantName: '',
 		};
+		const year = new Date().getFullYear()
+		const month = new Date().getMonth() + 1
+		const day = new Date().getDate()
+		const date = `${month}${day}${year}`
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.restaurantRef = database.ref('/restaurants');
+		this.restaurantRef = database.ref(`${date}/restaurants`);
 	};
 	handleSubmit(event) {
 		event.preventDefault();

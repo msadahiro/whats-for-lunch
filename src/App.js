@@ -14,19 +14,32 @@ class App extends Component {
     super(props);
     this.state = {
       currentUser: null,
-      restaurants: null
+      restaurants: null,
     }
-    this.restaurantRef = database.ref('/restaurants');
+    const year = new Date().getFullYear()
+    const month = new Date().getMonth() + 1
+    const day = new Date().getDate()
+    const date = `${month}${day}${year}`
+    this.restaurantRef = database.ref(`${date}/restaurants`);
   }
-  componentDidMount() {
+  componentWillMount() {
     auth.onAuthStateChanged((currentUser) => {
       this.setState({
         currentUser
       })
-      this.restaurantRef.on('value', (snapshot) => {
-        this.setState({ restaurants: snapshot.val() });
-      })
+      this.getRestaurants()
     })
+  }
+  getRestaurants() {
+    this.restaurantRef.on('value', (snapshot) => {
+      this.setState({ restaurants: snapshot.val() });
+    })
+  }
+  getDate() {
+    const year = new Date().getFullYear()
+    const month = new Date().getMonth() + 1
+    const day = new Date().getDate()
+    return `${month}${day}${year}`
   }
   render() {
     const { currentUser, restaurants } = this.state;
@@ -39,21 +52,52 @@ class App extends Component {
             <SignIn />
           </div>
         }
-        {currentUser &&
+        {(currentUser && !restaurants) &&
           <div className="Application-SignedOn">
             <div className="Application--SearchBar">
               <NewRestaurant />
               <CurrentUser user={currentUser} />
             </div>
+          </div>
+        }
+        {(currentUser && restaurants) &&
+          <div className="Application-SignedOn">
+            <div className="Application--SearchBar">
+              <NewRestaurant getDate={() => this.getDate()} />
+              <CurrentUser user={currentUser} />
+            </div>
             <div className="Application--Body">
-              <Leaderboard restaurants={restaurants} />
-              <Restaurants restaurants={restaurants} user={currentUser} />
+              <Leaderboard restaurants={restaurants}/>
+              <Restaurants restaurants={restaurants} user={currentUser} getDate={() => this.getDate()} />
             </div>
           </div>
         }
       </div>
     );
   }
+
+  // getrestaurantListsWithCount() {
+  //   Object.keys(this.state.restaurants).forEach(x => {
+  //     let name = this.state.restaurants[x].restaurantName;
+  //     let keyList = [];
+  //     Object.keys(this.state.restaurants[x]).forEach(key => {
+  //       let count;
+  //       if (typeof this.state.restaurants[x][key] === 'string') {
+  //         keyList.push(this.state.restaurants[x][key])
+  //       }
+  //       if (typeof this.state.restaurants[x][key] === 'object' && (name === keyList[0])) {
+  //         count = Object.keys(this.state.restaurants[x][key]).length
+  //       }
+  //       const newRestaurantListsWithCount = { ...this.state.restaurantListsWithCount }
+  //       if (newRestaurantListsWithCount[name] === undefined) {
+  //         newRestaurantListsWithCount[name] = count;
+  //         this.setState({
+  //           restaurantListsWithCount: newRestaurantListsWithCount
+  //         })
+  //       }
+  //     })
+  //   })
+  // }
 }
 
 export default App;

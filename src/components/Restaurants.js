@@ -6,12 +6,14 @@ import './Restaurants.css'
 
 class Restaurants extends Component {
 	handleSelect(key) {
+		const date = this.props.getDate()
 		const currentUser = this.props.user;
-		database.ref('/restaurants').child(key).child('votes').child(currentUser.uid).set(currentUser.displayName);
+		database.ref(`${date}/restaurants`).child(key).child('votes').child(currentUser.uid).set(currentUser.displayName);
 	}
 	handleDeselect(key) {
+		const date = this.props.getDate();
 		const currentUser = this.props.user;
-		database.ref('/restaurants').child(key).child('votes').child(currentUser.uid).remove();
+		database.ref(`${date}/restaurants`).child(key).child('votes').child(currentUser.uid).remove();
 	}
 
 	render() {
