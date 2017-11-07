@@ -1,17 +1,22 @@
 .NewRestaurant{
 	flex:1;
 	width:100%;
-	margin:4%;
+	justify-content: center;
+	display: flex;
+	margin: 0 1%;
 }
 .NewRestaurant input{
-	width:80%;
-	padding:3%;
-	font-size:24px;
+	width:90%;
+	padding:0 1%;
+	font-size:20px;
+
 }
 .NewRestaurant button{
-	width:20%;
-	padding:3%;
-	font-size: 24px;
+	width:10%;
+	padding:0 1%;
+	font-size: 16px;
 	background-color:lightblue;
 	overflow: hidden;
+	border:none;
+	text-align: center;
 }

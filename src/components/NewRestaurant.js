@@ -36,7 +36,7 @@ class NewRestaurant extends Component {
 				<button
 					onClick={this.handleSubmit}
 					disabled={!restaurantName}
-				>Submit</button>
+				>&#8677;</button>
 			</form>
 		)
 	}

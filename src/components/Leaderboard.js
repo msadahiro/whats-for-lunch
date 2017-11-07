@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { database } from '../firebase';
+import './Leaderboard.css';
 
 class Leaderboard extends Component {
 	constructor(props) {
@@ -9,8 +10,7 @@ class Leaderboard extends Component {
 		}
 	}
 	componentDidMount() {
-		this.getRestaurantName();
-		// this.getLeader();
+		this.getrestaurantListsWithCount();
 	}
 	getDate() {
 		const year = new Date().getFullYear()
@@ -18,7 +18,7 @@ class Leaderboard extends Component {
 		const day = new Date().getDate()
 		return `${month}${day}${year}`
 	}
-	getRestaurantName() {
+	getrestaurantListsWithCount() {
 		const date = this.getDate()
 		const { restaurantListsWithCount } = this.state;
 		database.ref(`${date}/restaurants`).on('value', (data) => {
@@ -68,7 +68,7 @@ class Leaderboard extends Component {
 			)
 		} else {
 			return (
-				<h1>Current Leader: </h1>
+				<div></div>
 			)
 		}
 	}
@@ -77,7 +77,7 @@ class Leaderboard extends Component {
 			return <div>Loading</div>
 		}
 		return (
-			<div>
+			<div className="Leaderboard--Header">
 				{this.renderLeader()}
 			</div>
 		)

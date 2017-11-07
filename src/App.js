@@ -45,15 +45,16 @@ class App extends Component {
     const { currentUser, restaurants } = this.state;
     return (
       <div className="Application">
-        <h1 className="Application--title">What's For Lunch?</h1>
         {!currentUser &&
           <div>
+            <h1 className="Application--title">What's For Lunch?</h1>
             <HowItWorks />
             <SignIn />
           </div>
         }
         {(currentUser && !restaurants) &&
           <div className="Application-SignedOn">
+            <h1 className="Application--title">What's For Lunch?</h1>
             <div className="Application--SearchBar">
               <NewRestaurant />
               <CurrentUser user={currentUser} />
@@ -62,12 +63,13 @@ class App extends Component {
         }
         {(currentUser && restaurants) &&
           <div className="Application-SignedOn">
-            <div className="Application--SearchBar">
+            <div className="Application--Header">
+              <h3 className="Application--SignedOn--Title">What's For Lunch?</h3>
               <NewRestaurant getDate={() => this.getDate()} />
               <CurrentUser user={currentUser} />
             </div>
             <div className="Application--Body">
-              <Leaderboard restaurants={restaurants}/>
+              <Leaderboard restaurants={restaurants} />
               <Restaurants restaurants={restaurants} user={currentUser} getDate={() => this.getDate()} />
             </div>
           </div>
@@ -75,29 +77,6 @@ class App extends Component {
       </div>
     );
   }
-
-  // getrestaurantListsWithCount() {
-  //   Object.keys(this.state.restaurants).forEach(x => {
-  //     let name = this.state.restaurants[x].restaurantName;
-  //     let keyList = [];
-  //     Object.keys(this.state.restaurants[x]).forEach(key => {
-  //       let count;
-  //       if (typeof this.state.restaurants[x][key] === 'string') {
-  //         keyList.push(this.state.restaurants[x][key])
-  //       }
-  //       if (typeof this.state.restaurants[x][key] === 'object' && (name === keyList[0])) {
-  //         count = Object.keys(this.state.restaurants[x][key]).length
-  //       }
-  //       const newRestaurantListsWithCount = { ...this.state.restaurantListsWithCount }
-  //       if (newRestaurantListsWithCount[name] === undefined) {
-  //         newRestaurantListsWithCount[name] = count;
-  //         this.setState({
-  //           restaurantListsWithCount: newRestaurantListsWithCount
-  //         })
-  //       }
-  //     })
-  //   })
-  // }
 }
 
 export default App;

@@ -11,7 +11,7 @@ const CurrentUser = ({ user }) => {
 				alt={user.displayName}
 			/>
 			<div className="CurrentUserIdentification">
-				<h2>{user.displayName}</h2>
+				<h4>{user.displayName}</h4>
 				<button onClick={() => auth.signOut()}>Sign Out</button>
 			</div>
 		</div>

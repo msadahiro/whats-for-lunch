@@ -9,7 +9,7 @@ const HowItWorks = () => {
 				<p className="howItWorks--body-flex-item">Ever want to go out with your friends and nobody knows where to go?</p>
 				<p className="howItWorks--body-flex-item">Everyone has suggestions but they don't want to say?</p>
 				<p className="howItWorks--body-flex-item">Try the voting App! Lets you input restuarants and people can vote on where to eat!</p>
-				<p className="howItWorks--body-flex-item">Sign in with your google email!</p>
+				<p className="howItWorks--body-flex-item">Sign in with your Gmail!</p>
 			</div>
 		</div>
 	)
