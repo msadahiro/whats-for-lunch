@@ -6,14 +6,14 @@
 	margin: 0 1%;
 }
 .NewRestaurant input{
-	width:90%;
-	padding:0 1%;
+	width:70%;
+	padding:1%;
 	font-size:20px;
 
 }
 .NewRestaurant button{
 	width:10%;
-	padding:0 1%;
+	padding:1%;
 	font-size: 16px;
 	background-color:lightblue;
 	overflow: hidden;

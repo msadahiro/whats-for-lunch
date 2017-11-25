@@ -7,8 +7,27 @@
 	display: flex;
 	flex-direction: column;
 	flex:1;
+	align-self: flex-start;
 }
-.Restaurant > h3{
+.Leader{
+	margin: 1em;
+	min-width: 190px;
+	text-align: center;
+	border: 6px solid#D8B153;
+	padding: 1em;	
+	display: flex;
+	flex-direction: column;
+	flex:1;
+	align-self: flex-start;
+}
+.Leader::before{
+	content:"\1F3C6";
+	position: relative;
+	font-size:30px;
+	margin:0;
+}
+.Restaurant > h3,
+.Leader > h3{
 	margin:0;
 }
 .select{

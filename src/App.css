@@ -6,14 +6,37 @@
   width:70%;
   min-height:100%;
   height:100vh;
-  background-color:rgba(255,255,255,0.8)
+}
+.Application--HowItWorks {
+  margin: 10%;
+  padding:5%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:rgba(255,255,255,1)
+}
+.Application--SignedOn--nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom:1px solid #eee;
+  min-height:70px;
+}
+.Application--SignedOn--Logo{
+  margin-left:1%;
+  margin-top:2%;
+  font-size:20px;
+  color:red;
 }
 .Application--title{
   display:flex;
   justify-content: center;
+  color:red;
 }
 .Application--SignedOn--Title{
   margin-left:1%;
+  display: inline-block;
+  width:40%;
 }
 .Application-SignedOn{
   display:flex;
@@ -21,6 +44,8 @@
   background-color:rgba(255,255,255,1);
   position: absolute;
   width:70%;
+  height:auto;
+  min-height:100%;
 }
 .Application--Header{
   display:flex;
@@ -32,3 +57,10 @@
   display: flex;
   flex-direction: column;
 }
+.Application--SearchBar{
+  margin-top: 2%;
+}
+.Application--SearchBar > h3{
+  text-align: center;
+}
+

@@ -15,19 +15,20 @@ class Restaurants extends Component {
 		const currentUser = this.props.user;
 		database.ref(`${date}/restaurants`).child(key).child('votes').child(currentUser.uid).remove();
 	}
-
 	render() {
-		const { restaurants, user } = this.props;
+		const { restaurants, user, leaders } = this.props;
 		return (
 			<div className="Restaurants">
 				{
 					map(restaurants, (restaurant, key) => {
+
 						return <Restaurant
 							key={key}
 							{...restaurant}
 							user={user}
 							handleSelect={() => this.handleSelect(key)}
 							handleDeselect={() => this.handleDeselect(key)}
+							leaders={leaders.includes(restaurant.restaurantName)}
 						/>
 					})
 				}

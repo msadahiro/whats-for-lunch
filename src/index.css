@@ -1,7 +1,10 @@
 html, body {
   box-sizing: border-box;
-  background-image: url('./images/Taco.jpg');
-  background-size: cover;
+  background-image: url('./images/pattern.png');
+  height:100%;
+  width:100%;
+  background-position: center center;
+  
 
 }
 *, *:before, *:after {
