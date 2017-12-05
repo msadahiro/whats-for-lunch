@@ -18,20 +18,23 @@ class Restaurants extends Component {
 	render() {
 		const { restaurants, user, leaders } = this.props;
 		return (
-			<div className="Restaurants">
-				{
-					map(restaurants, (restaurant, key) => {
+			<div className="Restaurant--Container">
+				<h2 className="currentLunch">Current Lunch Options:</h2>
+				<div className="Restaurants">
+					{
+						map(restaurants, (restaurant, key) => {
 
-						return <Restaurant
-							key={key}
-							{...restaurant}
-							user={user}
-							handleSelect={() => this.handleSelect(key)}
-							handleDeselect={() => this.handleDeselect(key)}
-							leaders={leaders.includes(restaurant.restaurantName)}
-						/>
-					})
-				}
+							return <Restaurant
+								key={key}
+								{...restaurant}
+								user={user}
+								handleSelect={() => this.handleSelect(key)}
+								handleDeselect={() => this.handleDeselect(key)}
+								leaders={leaders.includes(restaurant.restaurantName)}
+							/>
+						})
+					}
+				</div>
 			</div>
 		)
 	}

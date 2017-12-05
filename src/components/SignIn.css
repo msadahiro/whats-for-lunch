@@ -1,13 +1,13 @@
 .SignInButton{
   font-size: 24px;
-  background-color:rgb(173, 216, 230);
+  background-color:#D6413D;
   margin:0 auto;
   display: flex;
   justify-content: center;
   border: none;
   padding:1.5% 10%;
-  border-radius: 45%;
+  color:white;
 }
 .SignInButton:hover{
-  background-color: rgb(173,200,230)
+  background-color:rgb(216, 93, 91);
 }

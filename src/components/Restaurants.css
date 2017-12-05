@@ -1,7 +1,18 @@
 .Restaurants{
-	width:95%;
 	margin: 0 auto;
+	margin-left: 3%;
 	display:flex;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: center;	
+}
+.currentLunch{
+	background-color:#D6413D;
+	color:white;
+	text-align: center;
+	margin-top:0%;
+	padding:1%;
+}
+.Restaurant--Container{
+	border:2px solid #D6413D;
+	margin: 2%;
 }

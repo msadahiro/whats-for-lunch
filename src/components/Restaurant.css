@@ -1,6 +1,7 @@
 .Restaurant {
 	margin: 1em;
-	min-width: 190px;
+	max-width: 29%;
+	min-width:29%;
 	text-align: center;
 	border: 1px solid #eee;
 	padding: 1em;	
@@ -11,7 +12,8 @@
 }
 .Leader{
 	margin: 1em;
-	min-width: 190px;
+	max-width: 29%;
+	min-width:29%;
 	text-align: center;
 	border: 6px solid#D8B153;
 	padding: 1em;	
